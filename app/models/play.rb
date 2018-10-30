@@ -26,6 +26,6 @@ class Play < ApplicationRecord
 
   private
 
-    def score_word
-    end
+  def score_word
+  end
 end
