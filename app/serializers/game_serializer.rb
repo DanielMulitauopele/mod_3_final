@@ -1,10 +1,6 @@
 class GameSerializer < ActiveModel::Serializer
   attributes :game_id, :scores
 
-  # has_many :plays
-  # belongs_to :player_1
-  # belongs_to :player_2
-
   def game_id
     object.id
   end
