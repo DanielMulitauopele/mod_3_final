@@ -3,7 +3,6 @@ require 'rails_helper'
 describe 'as a guest user' do
   it 'should return game and score data in specific format' do
     get '/api/v1/games/1'
-
     expect(response).to be_successful
 
     details = JSON.parse(response.body)
