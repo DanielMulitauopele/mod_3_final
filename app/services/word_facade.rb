@@ -7,12 +7,14 @@ class WordFacade
 
   def sentences
     result.first[:lexicalEntries].first[:sentences].map do |sentence|
-      if sentence[:regions].first == "Canadian" || "British"
-        require "pry"; binding.pry
+      if sentence[:regions].first == "Canadian"
+        Sentence.new(sentence)
+      elsif sentence[:regions].first == "British"
         Sentence.new(sentence)
       else
+        next
       end
-    end
+    end.compact
   end
 
   def conn
