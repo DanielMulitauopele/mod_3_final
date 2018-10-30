@@ -12,9 +12,9 @@ describe 'as a guest user' do
     expect(response).to be_successful
 
     details = JSON.parse(response.body)
-    require "pry"; binding.pry
-    expect(details[:game_id]).to eq(game.id)
-    expect(details[:scores]).to be_an(Array)
-    expect(details[:scores].count).to eq(2)
+
+    expect(details['game_id']).to eq(game.id)
+    expect(details['scores']).to be_an(Array)
+    expect(details['scores'].count).to eq(2)
   end
 end
