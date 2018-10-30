@@ -7,15 +7,15 @@ class WordFacade
 
   def sentences
     result.first[:lexicalEntries].first[:sentences].map do |sentence|
-      Sentence.new(sentence).text
+      Sentence.new(sentence)
     end
   end
 
-  def regions
-    result.first[:lexicalEntries].first[:sentences].map do |sentence|
-      Sentence.new(sentence).region
-    end
-  end
+  # def regions
+  #   result.first[:lexicalEntries].first[:sentences].map do |sentence|
+  #     Sentence.new(sentence).region
+  #   end
+  # end
 
   def conn
     Faraday.new(url: 'https://od-api.oxforddictionaries.com') do |faraday|
