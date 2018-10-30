@@ -2,10 +2,10 @@
 
 <% @search.sentences.each do |sentence| %>
   <ul class="example-list">
-    <li class="example"></li>
+    <li class="example"><%= sentence %></li>
   </ul>
 <% end %>
 
 <% @search.regions.each do |region| %>
-  <h2>Region(s)</h2>
+  <h2 class="region">Region(s):<%= region %></h2>
 <% end %>

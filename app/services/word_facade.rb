@@ -6,8 +6,14 @@ class WordFacade
   end
 
   def sentences
-    result.first[:lexicalEntries].first[:sentences].each do |sentence|
-      Sentence.new(sentence)
+    result.first[:lexicalEntries].first[:sentences].map do |sentence|
+      Sentence.new(sentence).text
+    end
+  end
+
+  def regions
+    result.first[:lexicalEntries].first[:sentences].map do |sentence|
+      Sentence.new(sentence).region
     end
   end
 

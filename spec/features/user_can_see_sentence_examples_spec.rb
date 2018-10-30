@@ -9,6 +9,7 @@ describe 'as a guest user' do
     fill_in 'search', with: "mindfulness"
     # And I click "Submit"
     click_on 'Submit'
+    save_and_open_page
     # Then I should see a message that says "Examples for using 'mindfulness'"
     expect(page).to have_content("Examples for using 'mindfulness'")
     # And I should see a list of sentences with examples of how to use the word
