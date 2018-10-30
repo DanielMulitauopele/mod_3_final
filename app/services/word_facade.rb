@@ -6,18 +6,22 @@ class WordFacade
   end
 
   def sentences
-
+    result.first[:lexicalEntries].first[:sentences].each do |sentence|
+      Sentence.new(sentence)
+    end
   end
-  
+
   def conn
     Faraday.new(url: 'https://od-api.oxforddictionaries.com') do |faraday|
       faraday.adapter  Faraday.default_adapter
+      faraday.headers['app_id'] = '022f27e1'
+      faraday.headers['app_key'] = '1e1b0040cf4cccfe9b55204f5f4227be'
+      faraday.headers['Accept'] = 'application/json'
     end
   end
 
   def result
     response = conn.get("/api/v1/entries/en/#{@word}/sentences")
-    a = JSON.parse(response.body, symbolize_names: true)
-    require "pry"; binding.pry
+    JSON.parse(response.body, symbolize_names: true)[:results]
   end
 end

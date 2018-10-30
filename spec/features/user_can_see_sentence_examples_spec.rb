@@ -15,7 +15,7 @@ describe 'as a guest user' do
     expect(page).to have_css('.example-list')
     # And I should see only sentences where the region for usage is "Brittish" or "Canadian"
     expect(page).to have_css('.region', count: 2)
-    expect(page).to have_content("Brittish")
+    expect(page).to have_content("British")
     expect(page).to have_content("Canadian")
     # And I should not see sentences for any other regions (or blank regions)
   end
