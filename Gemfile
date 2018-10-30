@@ -25,7 +25,9 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_bot_rails'
   gem 'pry'
+  gem 'launchy'
 end
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'

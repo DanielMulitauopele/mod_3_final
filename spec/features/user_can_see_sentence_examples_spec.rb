@@ -6,7 +6,7 @@ describe 'as a guest user' do
     # When I visit "/"
     visit '/'
     # And I fill in a text box with "mindfulness"
-    fill_in ':search', with: "mindfulness"
+    fill_in 'search', with: "mindfulness"
     # And I click "Submit"
     click_on 'Submit'
     # Then I should see a message that says "Examples for using 'mindfulness'"
